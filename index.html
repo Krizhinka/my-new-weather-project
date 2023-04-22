@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;500&family=Tourney:ital,wght@0,200;1,800&display=swap"
+        rel="stylesheet" />
+
+
+    <script src="https://kit.fontawesome.com/2ff0bd1427.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="weather-app">
+            <form class="search-form" id="search-form">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="search" placeholder="City name" autofocus="on" autocomplete="off"
+                            class="form-control city-name shadow-sm border-3" id="city-name-input" />
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+                    </div>
+                    <div class="col-3">
+                        <button class="current-button" id="current-button">
+                            Current
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+
+            <h1>
+                City
+            </h1>
+
+            <div class="row">
+                <div class="col-7">
+                    <h2 id="current-day-time"></h2>
+
+                    <div class="d-flex weather-temperature">
+                        <img src="" alt="Weather" id="icon" />
+                        <div>
+                            <strong class="current-temperature" id="current-temperature">t</strong>
+                            <span class="units">°C</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="col-5">
+                    <ul class="current-indicators">
+                        <li id="description">Description</li>
+                        <br />
+                        <li id="humidity">Humidity - %</li>
+                        <br />
+                        <li id="wind">Wind - m/s</li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="weather-forecast" id="forecast">
+
+                <div class="row">
+
+                    <div class="col-2">
+                        <div class="weather-forecast-date">
+                            Mon
+                        </div>
+                        <!-- <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="" width="80" /> -->
+
+                        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                            alt="" width="80" />
+                        <div class="weather-forecast-temperatures">
+                            <span class="weather-forecast-temperature-min">-3° </span>
+                            <span class="weather-forecast-temperature-max">+5°</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <h4 class="links">This project is <a href="https://github.com/Krizhinka/my-weather-project">open-source on
+                GitHub</a> and <a href="https://magical-zuccutto-16d67f.netlify.app/">hosted on Netlify</a></h4>
+    </div>
+
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
