@@ -31,13 +31,7 @@ let currentDayTime = document.querySelector("#current-day-time");
 currentDayTime.innerHTML = `${day}  ${hours}:${minutes}`;
 
 function search(city) {
-  // let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-
   let apiKey = "9bt7o733de4f51be10f6e5b3c6aa4fc2";
-
-  // let units = "metric";
-
-  // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
@@ -53,13 +47,7 @@ function showCityTemperature(event) {
 
   h1.innerHTML = cityName;
 
-  //   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-
   let apiKey = "9bt7o733de4f51be10f6e5b3c6aa4fc2";
-
-  //   let units = "metric";
-
-  //   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
 
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
 
@@ -75,8 +63,6 @@ function showTemperature(response) {
     response.data.temperature.current
   );
 
-  
-
   document.querySelector("#description").innerHTML =
     response.data.condition.description.charAt(0).toUpperCase() +
     response.data.condition.description.slice(1);
@@ -90,10 +76,6 @@ function showTemperature(response) {
 
   document.querySelector("#icon").setAttribute(
     "src",
-    // `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-
-    // `http://shecodes-assets.s3.amazonaws.com/api/weather/${response.data.condition.icon_url}
-    // /broken-clouds-night.png`
 
     `${response.data.condition.icon_url}`
   );
@@ -108,13 +90,7 @@ function showPosition(position) {
 
   let lon = position.coords.longitude;
 
-  //   let units = "metric";
-
-  //  let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-
   let apiKey = "9bt7o733de4f51be10f6e5b3c6aa4fc2";
-
-  //   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
 
@@ -137,13 +113,7 @@ currentButton.addEventListener("click", getCurrentLocation);
 function getForecast(coordinates) {
   console.log(coordinates);
 
-  //   let units = "metric";
-
-  //   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
-
   let apiKey = "9bt7o733de4f51be10f6e5b3c6aa4fc2";
-
-  //   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
 
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
 
@@ -164,7 +134,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
-  // let forecast = response.data.daily;
+
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
