@@ -77,7 +77,7 @@ function showTemperature(response) {
   document.querySelector("#icon").setAttribute(
     "src",
 
-    `${response.data.condition.icon_url}`
+    `${response.data.condition.icon_url.replace('http:', 'https:')}`
   );
 
   getForecast(response.data.coordinates);
@@ -151,7 +151,7 @@ function displayForecast(response) {
                              ${formatDay(forecastDay.time)}
                         </div>
                         <img src=${
-                          forecastDay.condition.icon_url
+                          forecastDay.condition.icon_url.replace('http:', 'https:')
                         } alt="" width="80" />
                         <div class="weather-forecast-temperatures">
                             <span class="weather-forecast-temperature-min">${Math.round(
